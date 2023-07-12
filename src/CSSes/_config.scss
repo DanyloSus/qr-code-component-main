@@ -5,8 +5,49 @@ $LightGray: hsl(212, 45%, 89%);
 $GrayishBlue: hsl(220, 15%, 55%);
 $DarkBlue: hsl(218, 44%, 22%);
 
-$Width: 100%/12% * 2.5%;
-$Height: 100%/12% * 7.5%;
+$Width: 100%/12% * 2.5% !global;
+$Height: 100%/12% * 7.5% !global;
+
+$mobile-width: 100%/12% * 10.25%;
+$mobile-height: 100%/12% * 9%;
+
+@mixin left-text($is-img: false, $anim-delay: 0s) {
+  @if $is-img {
+    animation-name: img-anim;
+  } @else {
+    animation-name: text-anim;
+  }
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: #{$anim-delay}s;
+  animation-fill-mode: both;
+}
+
+@keyframes text-anim {
+  0% {
+    position: relative;
+    left: -20px;
+    opacity: 0;
+  }
+  100% {
+    left: 0px;
+    position: relative;
+    opacity: 1;
+  }
+}
+
+@keyframes img-anim {
+  0% {
+    position: relative;
+    top: -20px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    position: relative;
+    opacity: 1;
+  }
+}
 
 * {
   margin: 0;

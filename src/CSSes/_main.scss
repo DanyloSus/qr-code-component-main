@@ -41,3 +41,20 @@ main {
     color: $GrayishBlue;
   }
 }
+
+@media screen and (max-width: 650px) {
+  main {
+    width: $mobile-width;
+    height: $mobile-height;
+  }
+}
+
+@for $i from 1 through 3 {
+  .anim:nth-child(#{$i}) {
+    @if $i == 1 {
+      @include left-text(true, $i/ 2);
+    } @else {
+      @include left-text(false, $i/ 2);
+    }
+  }
+}

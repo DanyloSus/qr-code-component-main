@@ -1,4 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+@keyframes text-anim {
+  0% {
+    position: relative;
+    left: -20px;
+    opacity: 0;
+  }
+  100% {
+    left: 0px;
+    position: relative;
+    opacity: 1;
+  }
+}
+@keyframes img-anim {
+  0% {
+    position: relative;
+    top: -20px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    position: relative;
+    opacity: 1;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -40,6 +64,36 @@ main h1 {
 }
 main p {
   color: hsl(220, 15%, 55%);
+}
+
+@media screen and (max-width: 650px) {
+  main {
+    width: 85.4166666667%;
+    height: 75%;
+  }
+}
+.anim:nth-child(1) {
+  animation-name: img-anim;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+
+.anim:nth-child(2) {
+  animation-name: text-anim;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+.anim:nth-child(3) {
+  animation-name: text-anim;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1.5s;
+  animation-fill-mode: both;
 }
 
 body {
